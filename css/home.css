@@ -97,12 +97,13 @@
 }
 
 #banner {
-  background: url("../assets/img/castelo.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  height: calc(100vh - 14vh);
+  background: url("../assets/img/castelo.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
+  height: calc(100vh - 14vh);
   display: flex;
   justify-content: center;
   align-self: center;
