@@ -97,7 +97,10 @@
 }
 
 #banner {
-  background-color: var(--background);
+  background: url("../assets/img/castelo.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   height: calc(100vh - 14vh);
 
   display: flex;
