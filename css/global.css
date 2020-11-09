@@ -1,0 +1,27 @@
+@import url("fonts.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fffafa;
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+:root {
+  --background: #c1b478;
+  --primary: #566364;
+}

@@ -1,0 +1,121 @@
+@import url("fonts.css");
+
+#menu {
+  width: 100vw;
+  height: 14vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+#menu > h1 > img {
+  flex: 2;
+  max-width: 50%;
+  max-height: 13vh;
+}
+
+#menu > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#menu > span > i {
+  font-size: 1.5em;
+  z-index: 200;
+}
+
+#menu > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu > ul > li {
+  cursor: pointer;
+  margin-right: 25px;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  #menu > ul {
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  #menu > ul {
+    display: flex;
+  }
+  #menu > span {
+    display: none;
+  }
+
+  #menu > ul > li:nth-child(1) {
+    display: none;
+  }
+}
+
+.menuContainer {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: appears 0.3s ease-in-out;
+  z-index: 5;
+}
+
+.menuContainer > li {
+  font-size: 1.5em;
+  color: #fff;
+  margin: 20px 0;
+}
+
+.disappears {
+  animation: disappears 0.3s ease-in-out;
+}
+
+#btn-menu {
+  transition: 0.4s;
+}
+
+@keyframes appears {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappears {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#banner {
+  background-color: var(--background);
+  height: calc(100vh - 14vh);
+
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.fontBanner {
+  color: #333;
+  font-size: 2.5em;
+  font-family: Cardinal;
+}
+
+#about {
+  background-color: black;
+  height: 100vh;
+}

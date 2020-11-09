@@ -1,0 +1,16 @@
+@font-face {
+  font-family: Cardinal;
+  src: url("../assets/fonts/cardinal/Cardinal.ttf");
+}
+@font-face {
+  font-family: Cardinal-Alternate;
+  src: url("../assets/fonts/cardinal/Cardinal-Alternate.ttf");
+}
+@font-face {
+  font-family: Metropolis-Medium;
+  src: url("../assets/fonts/metropolis/Metropolis-Medium.otf");
+}
+@font-face {
+  font-family: Metropolis-Light;
+  src: url("../assets/fonts/metropolis/Metropolis-Light.otf");
+}
