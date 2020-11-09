@@ -24,12 +24,23 @@
   </header>
   <section id="banner">
   </section>
-  <section id="about"></section>
+  <section id="map">
+    <h2>Map</h2>
+    <span id="map-content">
+
+    </span>
+  </section>
 </body>
   <script>
     // Menu
     const menu = document.querySelector("#btn-menu")
     const menuContainer = document.querySelector('#menu > ul')
+
+    window.addEventListener("scroll", () => {
+      this.scrollY >= 10 ? 
+        document.querySelector("#menu").style.height = "10vh"
+       : document.querySelector("#menu").style.height = "14vh"
+    }, false);
 
     menuContainer.addEventListener("animationend", e => {
       if(e.animationName === "disappears") {

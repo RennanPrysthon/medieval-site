@@ -1,12 +1,16 @@
 @import url("fonts.css");
 
 #menu {
+  background-color: #fff;
   width: 100vw;
   height: 14vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
+  top: 0;
+  position: sticky;
+  transition: 0.3s ease-in-out;
 }
 
 #menu > h1 > img {
@@ -52,9 +56,11 @@
 }
 
 .menuContainer {
+  position: fixed !important;
   display: flex !important;
   flex-direction: column;
-  position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -115,7 +121,20 @@
   font-family: Cardinal;
 }
 
-#about {
-  background-color: black;
+#map {
+  background-color: var(--background);
   height: 100vh;
+  font-family: Cardinal;
+  font-size: 2em;
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+#map-content {
+  background: url("../assets/img/castelo.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
