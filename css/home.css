@@ -163,3 +163,33 @@
     font-size: 1.5em;
   }
 }
+
+footer {
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+footer > span {
+  padding: 10px;
+}
+
+footer > span > i {
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.2s ease-in-out;
+}
+
+footer > span > i:hover {
+  font-size: 20px;
+}
+
+footer > p {
+  font: 12px sans-serif;
+}
