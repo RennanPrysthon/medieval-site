@@ -122,19 +122,26 @@
 }
 
 #map {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--background);
   height: 100vh;
+  padding: 20px 40px;
+}
+
+#map > h2 {
+  text-align: center;
   font-family: Cardinal;
   font-size: 2em;
   color: #333;
-  display: flex;
-  justify-content: center;
 }
 
-#map-content {
-  background: url("../assets/img/castelo.jpeg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+#map > span > img {
+  margin-top: 50px;
+  width: 500px;
+  height: 100%;
+  border: 5px solid var(--primary);
+  border-radius: 10px;
 }
