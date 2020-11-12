@@ -22,6 +22,14 @@ ol {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+a:hover {
+  border-bottom: 2px solid var(--primary);
+}
+
 :root {
   --background: #c1b478;
   --primary: #566364;

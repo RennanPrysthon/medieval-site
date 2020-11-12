@@ -11,15 +11,42 @@
 <body>
   <header id="menu">
     <h1>
-      <img src="assets/img/Logo_Vimã_horizontal.png" alt="Logo">
+      <img src="./assets/img/Logo_Vimã_horizontal.png" alt="Logo">
     </h1>
     <span>
       <i id ="btn-menu" class="fas fa-bars"></i>
     </span>
     <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
+      <li>
+        <a href="./index.html">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="./pages/sobre/index.html">
+          Sobre
+        </a>
+      </li>
+      <li>
+        <a href="./pages/contacto/index.html">
+          Contacto
+        </a>
+      </li>
+      <li>
+        <a href="./pages/bilhetes/index.html">
+          Bilhetes
+        </a>
+      </li>
+      <li>
+        <a href="./pages/galeria/index.html">
+          Galeria
+        </a>
+      </li>
+      <li>
+        <a href="./pages/shop/index.html">
+          Shop
+        </a>
+      </li>
     </ul>
   </header>
   <section id="banner">
@@ -55,40 +82,5 @@
     </p>
   </footer>
 </body>
-  <script>
-    // Menu
-    const menu = document.querySelector("#btn-menu")
-    const menuContainer = document.querySelector('#menu > ul')
-
-    window.addEventListener("scroll", () => {
-      this.scrollY >= 10 ? 
-        document.querySelector("#menu").style.height = "10vh"
-       : document.querySelector("#menu").style.height = "14vh"
-    }, false);
-
-    menuContainer.addEventListener("animationend", e => {
-      if(e.animationName === "disappears") {
-        menuContainer.classList.remove('menuContainer')
-        menuContainer.classList.remove('disappears')
-      }
-    })  
-
-    menu.addEventListener('click', () => {
-      if (menuContainer.classList.contains('menuContainer')) {
-        menuContainer.classList.remove('menuContainer')
-        menu.classList.remove('fa-times-circle')
-        menu.classList.add('fa-bars')
-        menu.style.color = '#566364'
-      } else {
-        menuContainer.classList.add('menuContainer')
-        menu.classList.remove('fa-bars')
-        menu.classList.add('fa-times-circle')
-        menu.style.color = '#FFFFFF'
-      }
-    })
-
-    function closeMenu() {
-      menuContainer.classList.add('disappears')
-    }
-  </script>
+<script src="./js/menu.js"></script>
 </html>
