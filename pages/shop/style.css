@@ -36,21 +36,6 @@
   }
 }
 
-.chart {
-  position: relative;
-  margin-right: 10px;
-}
-
-.chart .badge {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  padding: 1px 5px;
-  border-radius: 50%;
-  background: #222;
-  color: white;
-}
-
 .product {
   min-width: 200px;
   min-height: 250px;
@@ -94,8 +79,4 @@
 .product-select:hover {
   background-color: #333;
   color: #fff;
-}
-
-#map-content > .chart {
-  display: none;
 }

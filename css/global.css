@@ -34,3 +34,137 @@ a:hover {
   --background: #c1b478;
   --primary: #566364;
 }
+
+.chart {
+  position: relative;
+  margin-right: 10px;
+}
+
+.chart .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 1px 5px;
+  border-radius: 50%;
+  background: #222;
+  color: white;
+}
+
+.appears {
+  position: fixed !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: appears 0.3s ease-in-out;
+  z-index: 5;
+}
+
+.disappears {
+  animation: disappears 0.3s ease-in-out;
+}
+
+@keyframes appears {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappears {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.chart-content {
+  z-index: 15;
+  background-color: #fff;
+  display: grid;
+
+  grid-template-areas:
+    "hea hea clo"
+    "lis lis lis"
+    "foo foo foo";
+  grid-template-rows: 40px 1fr 50px;
+  grid-template-columns: 1fr 1fr 50px;
+}
+
+.chart-content > .chart-header {
+  grid-area: hea;
+  padding: 0 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.chart-content > .chart-close {
+  grid-area: clo;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.chart-content > .chart-list {
+  display: flex;
+  grid-area: lis;
+  padding: 10px;
+  overflow-y: scroll;
+  box-shadow: inset 0px 11px 8px -10px #ccc, inset 0px -11px 8px -10px #ccc;
+}
+.chart-content > .chart-list > ul {
+  width: 100%;
+}
+
+.chart-content > .chart-list > ul > li {
+  margin: 10px 0;
+  border-bottom: 1px solid #777;
+}
+
+.chart-content > .chart-footer {
+  grid-area: foo;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.chart-content > .chart-footer > .cart-finish {
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .chart-content {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed !important;
+  }
+}
+
+@media screen and (max-width: 1900px) {
+  .chart-content {
+    margin: 0 auto;
+    min-width: 500px;
+    min-height: 500px;
+    position: fixed !important;
+  }
+}
