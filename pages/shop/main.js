@@ -38,6 +38,12 @@ const products = [
     name: 'Pen',
     price: 50.00
   },
+  {
+    id: 6,
+    url: '../../assets/img/Fita.png',
+    name: 'Fita',
+    price: 50.00
+  },
 ]
 
 products.forEach(item => (
