@@ -1,4 +1,64 @@
 .container {
-  height: calc(100vh - 14vh);
-  background-color: cyan;
+  background-color: #eee;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container > article {
+  width: 100%;
+  min-height: 500px;
+  margin: 10px 0;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.container > article:nth-child(1) > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.container > article:nth-child(1) > div > img {
+  max-width: 50%;
+  border: 2px solid #555;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .container > article:nth-child(1) > div {
+    flex-direction: column;
+  }
+  .container > article:nth-child(1) > div > p {
+    padding: 20px;
+  }
+  .container > article:nth-child(1) > div > img {
+    max-width: 70%;
+  }
+}
+
+.container > article:nth-child(2) {
+  padding: 10px;
+}
+.container > article:nth-child(2) > ul {
+  padding: 20px;
+}
+.container > article:nth-child(2) > ul > li {
+  list-style-type: disc;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.container > article:nth-child(3) {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container > article:nth-child(3) > h2 {
+  margin-bottom: 50px;
 }
