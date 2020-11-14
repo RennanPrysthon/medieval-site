@@ -134,6 +134,8 @@ a:hover {
 .chart-content > .chart-list > ul > li {
   margin: 10px 0;
   border-bottom: 1px solid #777;
+  display: flex;
+  justify-content: space-between;
 }
 
 .chart-content > .chart-footer {
@@ -143,6 +145,7 @@ a:hover {
   justify-content: space-between;
   padding: 0 10px;
 }
+
 .chart-content > .chart-footer > .cart-finish {
   background-color: #444;
   color: #fff;
@@ -167,4 +170,17 @@ a:hover {
     min-height: 500px;
     position: fixed !important;
   }
+}
+
+.sucess-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 20; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
