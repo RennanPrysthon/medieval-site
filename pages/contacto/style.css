@@ -1,4 +1,4 @@
 .container {
   height: calc(100vh - 14vh);
-  background-color: cyan;
+  background-color: var(--background);
 }
