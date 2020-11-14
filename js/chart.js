@@ -67,7 +67,12 @@ function showCart() {
           ${chartItens.map((item, index) => (
             ` 
               <li>
-                ${index + 1} - ${item.name} - ${item.qtd}
+                <span>
+                  ${index + 1}) ${item.name} - ${item.qtd} * ${item.price}
+                </span>
+                <strong>
+                  ${item.qtd * item.price}
+                </strong>
               </li> 
             `
           )).join('')}
@@ -144,5 +149,17 @@ function clearCart() {
 }
 
 function finalizarCompra() {
+  var valorTotal = chartItens.map(item => item.price * item.qtd).reduce(function(acc, val) { return acc + val; }, 0)
+  clearCart()
+  closeCart()
+  chartItens = []
+  badges.forEach(badge => {
+    badge.innerHTML = chartItens.length | 0;
+  })  
+  Swal.fire(
+    'Compra finalizada',
+    `Simulação: Preço final da compra: ${valorTotal}`,
+    'success'
+  )
+} 
 
-}
