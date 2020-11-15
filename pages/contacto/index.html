@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../../css/home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <title>Contacto</title>
 </head>
 <body>
@@ -60,7 +61,49 @@
   </header>
   <main class="container">
     <section>
-      
+      <h2>
+        Formulário para contacto
+      </h2>
+      <form id="contact">
+        <div class="row">
+          <div class="col-25">
+            <label for="pnome">Primeiro Nome</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="pnome" name="primeironome" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="unome">Último Nome</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="unome" name="ultimonome">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="assunto">Assunto</label>
+          </div>
+          <div class="col-75">
+            <select id="assunto" name="assunto">
+              <option value="1">Dúvida</option>
+              <option value="2">Sugestões</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="subject">Mensagem</label>
+          </div>
+          <div class="col-75">
+            <textarea id="subject" name="subject" style="height:200px"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
     </section>
   </main>
   <footer>
@@ -73,8 +116,9 @@
        Vimã © 2020 TODOS OS DIREITOS RESERVADOS
     </p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="../../js/menu.js"></script>
-  <script src="../../js/chart.js"></script>
+  <script src="../../js/cart.js"></script>
   <script src="./main.js"></script>
 </body>
 </html>
