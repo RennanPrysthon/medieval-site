@@ -61,12 +61,16 @@
   background-color: rgba(0, 0, 0, 0.9);
   animation: appears 0.3s ease-in-out;
   z-index: 5;
+  color: #fff;
 }
 
 .menuContainer > li {
   font-size: 1.5em;
-  color: #fff;
   margin: 20px 0;
+}
+
+.menuContainer > li > a {
+  color: #fff;
 }
 
 .disappears {
