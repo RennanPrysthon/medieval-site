@@ -1,4 +1,34 @@
 .container {
   height: calc(100vh - 14vh);
-  background-color: cyan;
+  background-color: var(--background);
+  padding: 20px;
+}
+
+.ticket-content {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.ticket-content > h2 {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 20px 0;
+}
+.ticket-content > img {
+  border: 5px solid #555;
+  border-radius: 20px;
+}
+
+.ticket-footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buy-btn-content {
+  background-color: #555;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
 }

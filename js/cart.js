@@ -6,38 +6,51 @@ const products = [
     id: 1,
     url: '../../assets/img/Bone.png',
     name: 'Boné',
-    price: 20.00
+    price: 20.00,
+    show: true
   },
   {
     id: 2,
     url: '../../assets/img/Caneca.png',
     name: 'Caneca',
-    price: 34.00
+    price: 34.00,
+    show: true
   },
   {
     id: 3,
     url: '../../assets/img/Copo.png',
     name: 'Copo',
-    price: 10.00
+    price: 10.00,
+    show: true
   },
   {
     id: 4,
     url: '../../assets/img/Cracha.png',
     name: 'Cracha',
-    price: 50.00
+    price: 50.00,
+    show: true
   },
   {
     id: 5,
     url: '../../assets/img/Pen.png',
     name: 'Pen',
-    price: 50.00
+    price: 50.00,
+    show: true
   },
   {
     id: 6,
     url: '../../assets/img/Fita.png',
     name: 'Fita',
-    price: 50.00
+    price: 50.00,
+    show: true
   },
+  {
+    id: 7,
+    url: '../../assets/img/Bilhete.png',
+    name: 'Bilhete',
+    price: 20.00,
+    show: false
+  }
 ]
 
 var chartItens = loadItens();
@@ -149,17 +162,48 @@ function clearCart() {
 }
 
 function finalizarCompra() {
-  var valorTotal = chartItens.map(item => item.price * item.qtd).reduce(function(acc, val) { return acc + val; }, 0)
-  clearCart()
-  closeCart()
-  chartItens = []
-  badges.forEach(badge => {
-    badge.innerHTML = chartItens.length | 0;
-  })  
-  Swal.fire(
-    'Compra finalizada',
-    `Simulação: Preço final da compra: ${valorTotal}`,
-    'success'
-  )
+  if(chartItens.length === 0 ) {
+    closeCart()
+    Swal.fire(
+      'Nenhum item adicionado',
+      'Adicione alguns itens no carrinho',
+      'info'
+    )
+    return;
+  } else {
+    var valorTotal = chartItens.map(item => item.price * item.qtd).reduce(function(acc, val) { return acc + val; }, 0)
+    Swal.fire({
+      title: 'Deseja finalizar a compra?',
+      text: "Preço total foi de: " + valorTotal,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, comprar',
+      cancelButtonText: 'Não, cancelar',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clearCart()
+        closeCart()
+        chartItens = []
+        badges.forEach(badge => {
+          badge.innerHTML = chartItens.length | 0;
+        })  
+        Swal.fire(
+          'Compra finalizada',
+          `Simulação: Preço final da compra: ${valorTotal}`,
+          'success'
+        )
+      } else if (
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        closeCart()
+        Swal.fire(
+          'Cancelada',
+          'Sua compra foi cancelada',
+          'error'
+        )
+      }
+    })
+  }
 } 
 

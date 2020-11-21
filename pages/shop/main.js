@@ -2,7 +2,9 @@ const container = document.querySelector(".container")
 
 var itens = document.querySelector(".itens")
 
-products.forEach(item => (
+products.forEach(item => {
+  if (!item.show) return;
+  (
   itens.innerHTML += `
     <div 
       class="product" 
@@ -22,7 +24,7 @@ products.forEach(item => (
       </span>
     </div>
   `
-))
+)})
 
 function chooseItem(itemId) {
   var product = products.filter(i => i.id == itemId)[0];
