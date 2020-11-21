@@ -17,6 +17,8 @@
 }
 .ticket-content > ul > li > img {
   border: 2px solid #555;
+  max-width: 820px;
+  max-height: 300px;
 }
 
 .ticket-footer {
