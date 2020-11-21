@@ -1,11 +1,12 @@
 .container {
-  height: calc(100vh - 14vh);
   background-color: var(--background);
   padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ticket-content {
-  background-color: #fff;
   padding: 10px;
 }
 
@@ -14,9 +15,8 @@
   text-align: center;
   padding: 20px 0;
 }
-.ticket-content > img {
-  border: 5px solid #555;
-  border-radius: 20px;
+.ticket-content > ul > li > img {
+  border: 2px solid #555;
 }
 
 .ticket-footer {
@@ -31,4 +31,9 @@
   color: #fff;
   padding: 10px;
   cursor: pointer;
+}
+
+.ticket-list > li {
+  background-color: #fff;
+  margin: 20px;
 }

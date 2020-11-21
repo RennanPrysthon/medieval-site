@@ -47,8 +47,29 @@ const products = [
   {
     id: 7,
     url: '../../assets/img/Bilhete.png',
-    name: 'Bilhete',
-    price: 20.00,
+    name: 'Bilhete 0-3 anos',
+    price: 0.00,
+    show: false
+  },
+  {
+    id: 8,
+    url: '../../assets/img/Bilhete.png',
+    name: 'Bilhete 4-12 anos',
+    price: 10.00,
+    show: false
+  },
+  {
+    id: 9,
+    url: '../../assets/img/Bilhete.png',
+    name: 'Bilhete 13-64 anos',
+    price: 19.00,
+    show: false
+  },
+  {
+    id: 10,
+    url: '../../assets/img/Bilhete.png',
+    name: 'Bilhete +65 anos',
+    price: 13.00,
     show: false
   }
 ]
