@@ -1,6 +1,9 @@
 const container = document.querySelector(".container")
 const list = document.querySelector(".list > ul")
-const gallery_stream = document.querySelector(".gallery_stream")
+const galleryStream = document.querySelector(".gallery-stream")
+const gallery = document.querySelector('.gallery');
+const btnPrev = document.querySelector('.gallery-prev')
+const btnNext = document.querySelector('.gallery-next')
 
 const images = [
   {
@@ -65,7 +68,6 @@ const images = [
   },
 ]
 
-var focusedImg = 1;
 
 list.innerHTML = images.map(item => (
   `
@@ -75,28 +77,51 @@ list.innerHTML = images.map(item => (
   `
 )).join('')
 
-gallery_stream.innerHTML = images.map(item => (
-  `
-    <div 
-    style="background-image: url('${item.path}');"
-    class="gallery_item bg-${item.id}" >
-    </div>
-  `
-)).join('')
+var focusedImg = 1;
+
+function getImgById(id) {
+  return images.find(item => item.id === id)
+}
+
+function changeImage(id) {
+  const path = getImgById(id).path;
+  const img = document.createElement('img')
+  img.src = path;
+  gallery.classList.add('gallery-show')
+  galleryStream.replaceChildren(img)
+}
 
 function openImgModal(imageId) {
-  console.log(imageId)
+  focusedImg = imageId
+  changeImage(focusedImg)
 }
 
 function nextImg() {
-  if(focusedImg === 1) {
-    focusedImg = 12
+  if(focusedImg === 12) {
+    focusedImg = 1
+  } else {
+    focusedImg += 1;
   }
+  
+  changeImage(focusedImg)
 }
-
 
 function prevImg() {
-  if (focusedImg === 12) {
-    focusedImg = 1
+  if (focusedImg === 1) {
+    focusedImg = 12
+  } else {
+    focusedImg -= 1
   }
+  changeImage(focusedImg)
 }
+
+btnPrev.addEventListener('click', prevImg)
+btnNext.addEventListener('click', nextImg)
+galleryStream.addEventListener('click', () => {})
+gallery.addEventListener('click', e => {
+  if(e.toElement.classList.contains('gallery') ||
+    e.toElement.classList.contains('gallery-stream')
+   ) {
+    gallery.classList.remove('gallery-show')
+  }
+})
